@@ -2,7 +2,10 @@
     "name": "lawcpd/homepage",
     "description": "LawCPD Homepage",
     "type": "project",
-    "license": "OSL-3.0,AFL-3.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
     "authors": [
         {
             "name": "Adrian Mateljan",

@@ -1,7 +1,7 @@
 {
     "name": "lawcpd/homepage",
     "description": "LawCPD Homepage",
-    "type": "project",
+    "type": "library",
     "license": [
         "OSL-3.0",
         "AFL-3.0"

@@ -1,0 +1,14 @@
+{
+    "name": "lawcpd/homepage",
+    "description": "LawCPD Homepage",
+    "type": "project",
+    "license": "OSL-3.0,AFL-3.0",
+    "authors": [
+        {
+            "name": "Adrian Mateljan",
+            "email": "adrian@lawcpd.com.au"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

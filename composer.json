@@ -13,5 +13,13 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "extra": {
+        "map": [
+            [
+                "homepage.html",
+                "pub/homepage.html"
+            ]
+        ]
+    }
 }

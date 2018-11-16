@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwcDVVFACQoIVlZSDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+<link rel="shortcut icon" href="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/lawcpd-favicon-computer.ico" />
+<script>dataLayer = [{"drupalLanguage":"en","userUid":0}];</script>
+<meta name="viewport" content="user-scalable=no, width=device-width, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="ImageToolbar" content="false" />
+<meta name="description" content="Complete your legal CPD/CLE online before the March 31 deadline! LawCPD is a nationally recognised CPD provider offering over 100 hours of premium online CPD courses from 45+ leading legal experts. Get CPD compliant anywhere, anytime that suits your busy schedule." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://lawcpd.com.au/" />
+<link rel="shortlink" href="https://lawcpd.com.au/" />
+  <title>Premium Legal CPD - Online CPD - LawCPD.com.au</title>
+  <link rel="stylesheet" href="https://lawcpd.com.au/sites/lawcpd.com.au/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" />
+<link rel="stylesheet" href="https://lawcpd.com.au/sites/lawcpd.com.au/files/css/css_nWMrAnngLR9HQEKkwVmwuj5OpqYnmORqWVqXWGzzkzc.css" />
+<link rel="stylesheet" href="https://lawcpd.com.au/sites/lawcpd.com.au/files/css/css_ScZ1wKL3m3NkijZ0Rak4j6eV1A4dAI5MuGoDBxs1hnw.css" />
+<link rel="stylesheet" href="https://lawcpd.com.au/sites/lawcpd.com.au/files/css/css_1LMIHeCRIi8T-YbY63HGw7-C24F8t4bASaLdDoC-ViQ.css" />
+  <script>var Clp = {'fn': {}};</script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.type='text/javascript';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WPNQTP');</script>
+<script src="https://lawcpd.com.au/sites/lawcpd.com.au/files/js/js_2hoh0v0y6B2TInaEIHI3XwA7E31uiNqpq69BJ97pODY.js"></script>
+<script>jQuery.migrateMute=true;jQuery.migrateTrace=false;</script>
+<script src="https://lawcpd.com.au/sites/lawcpd.com.au/files/js/js_46e7bADdrcvOy3vVyQyerRrbMI2BisAq9r91iOlSv7A.js"></script>
+<script src="https://lawcpd.com.au/sites/lawcpd.com.au/files/js/js_3DfY8M4HxDjgYScM5QMDppLPRTAuYQthpHFlYddbry4.js"></script>
+<script src="https://lawcpd.com.au/sites/lawcpd.com.au/files/js/js_Wrcmrw3cly9XN-gK5GiLpWReeqWjtadg2gTJFg3Dh3I.js"></script>
+<script src="https://lawcpd.com.au/sites/lawcpd.com.au/files/js/js_ElCIciFnTnJstqp3SAGkUEAFVSY3tK75fhpuTgsBZpE.js"></script>
+<script src="https://lawcpd.com.au/sites/lawcpd.com.au/files/js/js_-YnTiHKjtvCVSN-eE5mfDXPCI3SxcAPoLtaTWXWfYhA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"clpt_lawcpd","theme_token":"U6qctvZlrKgF41guHNTQNNg9SVZVmHKXIuRScIsQDrI","jquery_version":"1.11","js":{"0":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.11\/jquery.min.js":1,"1":1,"sites\/all\/modules\/jquery_update\/replace\/jquery-migrate\/1\/jquery-migrate.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery.form\/4\/jquery.form.min.js":1,"sites\/all\/modules\/select2\/js\/Drupal.select2.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/ubercart\/uc_file\/uc_file.js":1,"sites\/all\/modules\/clp\/clp_helper\/ClpJavascript.js":1,"sites\/all\/modules\/clp\/clp_helper\/ClpDrupal.js":1,"sites\/all\/modules\/ie6nomore\/ie6nomore.js":1,"sites\/all\/modules\/clp\/module_admin\/module_admin.js":1,"sites\/all\/modules\/clp\/pdo_config\/pdo_config.js":1,"sites\/all\/modules\/uc_pma\/uc_pma.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/libraries\/select2\/select2.min.js":1,"sites\/all\/modules\/datalayer\/datalayer.js":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/js\/vendor\/modernizr.js":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/js\/foundation.min.js":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/js\/foundation.reveal.js":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/js\/vendor\/jquery.anystretch.min.js":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/js\/clpt_lawcpd.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"sites\/all\/modules\/ubercart\/uc_file\/uc_file.css":1,"sites\/all\/modules\/ubercart\/uc_order\/uc_order.css":1,"sites\/all\/modules\/ubercart\/uc_product\/uc_product.css":1,"sites\/all\/modules\/ubercart\/uc_store\/uc_store.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ie6nomore\/ie6nomore.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/clp\/custom_blocks\/custom_blocks.css":1,"sites\/all\/libraries\/select2\/select2.css":1,"sites\/all\/modules\/select2\/css\/select2_integration.css":1,"sites\/all\/themes\/zurb_foundation\/css\/normalize.css":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/css\/foundation.min.css":1,"sites\/lawcpd.com.au\/themes\/clpt_lawcpd\/css\/clpt_lawcpd.css":1}},"clp_aws":{"ckfinder":{"config":{"removePlugins":"basket","connectorPath":"\/sites\/all\/modules\/ckeditor\/ckfinder\/core\/connector\/s3\/connector.php"}}},"urlIsAjaxTrusted":{"\/cart":true,"\/views\/ajax":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:849062071ed12c41d1e1a523753fdcd1":{"view_name":"available_modules","view_display_id":"block_1","view_args":"","view_path":"node\/76","view_base_path":"[pdonline:products-path]","view_dom_id":"849062071ed12c41d1e1a523753fdcd1","pager_element":0}}},"select_2":{"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"0"},"process_all_selects_on_page":true,"no_version_check":false,"elements":[],"settings_updated":true},"dataLayer":{"languages":{"en":{"language":"en","name":"English","native":"English","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"","weight":"0","javascript":""}}}});</script>
+  <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body class="html front not-logged-in no-sidebars page-node page-node- page-node-76 node-type-page lang-en" >
+  <div class="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <!--.page -->
+<div role="document" class="page">
+
+  <!--.l-header region -->
+  <header role="banner">
+    <h1>    <a href="/" title="Home" rel="home">
+      <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/lawcpd.png" width="574" height="123" alt="LawCPD.com.au" />
+      <span>LawCPD.com.au</span>
+    </a>
+    </h1>  </header>
+  <!--/.l-header -->
+
+      
+                    
+      
+      
+    <article id="node-76" class="node node-page node-promoted view-mode-full" about="/premium-legal-cpd-online" typeof="foaf:Document" data-nid="76">
+
+      <span property="dc:title" content="Premium Legal CPD Online" class="rdf-meta element-hidden"></span>
+  
+  <div class="body field">    <div id="section1" class="background before-ribbon" data-desktop="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background1-large.jpg" data-mobile="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background1-small.jpg">
+      <div class="row">
+        <div class="small-12 columns">
+          <h2>Premium CPD for Australian lawyers<strong>Online courses available anywhere, anytime</strong></h2>
+          <p>CPD that suits your busy schedule</p>
+          <ul>
+            <li><a href="/online-courses" class="button large"><span>See our Online </span><span>CPD Courses</span></a></li>
+            <li><a href="/user/login" class="button small"><span>Returning lawyer? </span><span>Log in here</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ribbon bottom"><div><div></div><div></div><div></div><div></div><div></div></div></div>
+
+    <div id="section2" class="after-ribbon">
+      <div class="row">
+        <div class="small-12 columns">
+          <ul class="small-block-grid-1 medium-block-grid-3">
+            <li>
+              <a href="/how-it-works-premium-online-cpd-seminars">
+                <h3>How it works</h3>
+                <p>Study interactive courses online with short videos, text and questions. Self paced learning on-demand</p>
+                <em>Learn More ></em>
+              </a>
+            </li>
+            <li>
+              <a class="lawcpd-action-states" href="/law-cpd-points">
+                <h3>Online CPD for Lawyers</h3>
+                <p>Australian lawyers in every State and Territory can earn CPD points online with LawCPD</p>
+                <em>Learn More ></em>
+              </a>
+            </li>
+            <li>
+              <a href="/authors">
+                <h3>Learn from the experts</h3>
+                <p>All of our online CPD courses are authored by leading experts in law</p>
+                <em>Learn More ></em>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="section3">
+      <div id="section3a" class="row">
+        <div class="small-12 columns">
+          <ul class="tabs" data-tab>
+            <li class="tab-title"><a href="#act-legal-cpd-rules">ACT</a></li>
+            <li class="tab-title"><a href="#nsw-legal-cpd-rules">NSW</a></li>
+            <li class="tab-title"><a href="#nt-legal-cpd-rules">NT</a></li>
+            <li class="tab-title"><a href="#qld-legal-cpd-rules">QLD</a></li>
+            <li class="tab-title"><a href="#sa-legal-cpd-rules">SA</a></li>
+            <li class="tab-title"><a href="#tas-legal-cpd-rules">Tas</a></li>
+            <li class="tab-title"><a href="#vic-legal-cpd-rules">Vic</a></li>
+            <li class="tab-title"><a href="#wa-legal-cpd-rules">WA</a></li>
+          </ul>
+          <div class="tabs-content">
+            <div class="content active" id="choose">
+              <p>Lawyers in all Australian States and Territories can earn CPD points by completing LawCPD’s online CPD courses.</p>
+              <p>Click on your State or Territory to find out how LawCPD complies with the CPD rules in your jurisdiction.</p>
+            </div>
+            <div class="content" id="act-legal-cpd-rules">
+              <h3>Australian Capital Territory Legal CPD Rules</h3>
+              <p><strong>ACT lawyers can earn 1 CPD unit per hour and up to 10 CPD units each year by completing LawCPD’s online CPD courses.</strong></p>
+              <p> All lawyers who hold a current ACT practising certificate must complete mandatory continuing professional development (<strong>CPD</strong>).</p>
+              <p>Lawyers must complete a minimum of 10 CPD units each CPD year (1 April – 31 March), and must earn a minimum of one CPD unit from each of the following four core CPD areas:</p>
+              <ul>
+              	<li>Legal Ethics and Professional Responsibility;</li>
+              	<li> Practice Management and Business Skills;</li>
+              	<li>Professional Skills; and</li>
+<li> Substantive Law and Procedural Law.</li>
+              </ul>
+              <p> Under the ACT Law Society’s CPD scheme, lawyers can earn 1 CPD unit per hour and up to 10 CPD units each year by completing LawCPD’s online legal CPD courses.</p>
+              <p><a href="/law-cpd-points/act-law-society-rules">Click here to read more detailed information about the CPD requirements for ACT practitioners</a>.</p>
+            </div>
+            <div class="content" id="nsw-legal-cpd-rules">
+              <h3>New South Wales Legal CPD Rules</h3>
+              <p><strong>NSW lawyers can earn 1 CPD unit per hour and all 10 CPD units each year by completing LawCPD&rsquo;s online CPD courses.</strong></p>
+              <p>All NSW lawyers must complete mandatory continuing professional development (<strong>CPD</strong>) each year to maintain their practising certificate. The NSW CPD scheme for solicitors is set out in the <em>Legal Profession Uniform Continuing Professional Development (Solicitors) Rules 2015</em> (formerly&nbsp;<a href="/mcle-rules-nsw/rule-57"><strong>MCLE Rule 57</strong></a>).</p>
+              <p>Lawyers must complete a minimum of 10 legal CPD units each CPD year (1 April &ndash; 31 March) and must earn a minimum of one unit from each of the following four mandatory fields:</p>
+              <ul>
+              	<li>Ethics and Professional Responsibility;</li>
+              	<li>Practice Management and Business Skills;</li>
+              	<li>Professional Skills; and</li>
+              	<li>Substantive Law.</li>
+              </ul>
+              <p>Under the Law Society of NSW CPD scheme, lawyers can earn 1 legal CPD unit per hour and all 10 legal CPD units each year by completing LawCPD&rsquo;s online legal CPD courses.</p>
+              <p><a href="/mcle-rules-nsw/">Click here to read more detailed information about the CPD requirements for NSW practitioners</a>.</p>
+            </div>
+            <div class="content" id="nt-legal-cpd-rules">
+              <h3>Northern Territory Legal CPD Rules</h3>
+              <p><strong>NT lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online CPD courses.</strong></p>
+              <p>All lawyers in the NT must complete mandatory continuing professional development (<strong>CPD</strong>) each year to maintain their practising certificate.</p>
+              <p>Lawyers must complete a minimum of 10 CPD points each CPD year (1 April &ndash; 31 March) and must earn a minimum of one CPD point in each of the following core CPD areas:</p>
+              <ul>
+              	<li>Ethics and Professional Responsibility;</li>
+              	<li>Practice Management and Business Skills;</li>
+              	<li>Professional Skills; and</li>
+              	<li>Substantive Law.</li>
+              </ul>
+              <p>Under the Law Society of the NT&rsquo;s CPD scheme, lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online legal CPD courses.</p>
+              <p><a href="/law-cpd-points/law-society-nt-rules">Click here to read more detailed information about the CPD requirements for NT practitioners</a>.</p>            </div>
+            <div class="content" id="qld-legal-cpd-rules">
+              <h3>Queensland Legal CPD Rules</h3>
+              <p><strong>Queensland lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online CPD courses.</strong></p>
+              <p>All Queensland lawyers must complete mandatory continuing professional development (<strong>CPD</strong>) each year to maintain their practising certificate.</p>
+              <p>Lawyers must complete a minimum of 10 CPD points each CPD year (1 April &ndash; 31 March) and must earn a minimum of one point in each of the following three mandatory core areas:</p>
+              <ul>
+              	<li>Practical Legal Ethics;</li>
+              	<li>Practice Management and Business Skills; and</li>
+              	<li>Professional Skills.</li>
+              </ul>
+              <p>Under the Queensland Law Society&rsquo;s CPD scheme, lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online legal CPD courses.</p>
+              <p><a href="/law-cpd-points/law-society-qld-rules">Click here to read more detailed information about the CPD requirements for Qld practitioners</a>.</p>
+            </div>
+            <div class="content" id="sa-legal-cpd-rules">
+              <h3>South Australia Legal CPD Rules</h3>
+              <p><strong>South Australian lawyers can earn 1 CPD unit per hour and up to 5 CPD units each year by completing LawCPD&rsquo;s online CPD courses.</strong></p>
+              <p>All lawyers who hold a current SA practising certificate must complete mandatory continuing professional development (<strong>MCPD</strong>).</p>
+              <p>Lawyers must complete a minimum of 10 CPD units each CPD year (1 April &ndash; 31 March) and must complete at least one unit from each of the following three required areas each CPD year:</p>
+              <ul>
+                <li>Practical Legal Ethics;</li>
+              	<li>Practice Management or Business Skills; and</li>
+              	<li>Professional Skills.</li>
+              </ul>
+              <p>Under the&nbsp;<em>Legal Practitioners Education and Admission Council Rules 2004</em>&nbsp;(<strong>LPEAC Rules</strong>), lawyers can earn 1 CPD unit per hour and up to 5 CPD units each year by completing LawCPD&rsquo;s online legal CPD courses.</p>
+              <p><a href="/law-cpd-points/sa-law-society-mcpd-rules">Click here to read more detailed information about the CPD requirements for SA practitioners</a></p>
+            </div>
+            <div class="content" id="tas-legal-cpd-rules">
+              <h3>Tasmania Legal CPD Rules</h3>
+              <p><strong>Tasmanian lawyers can earn 1 CPD point per hour and up to 5 CPD units each year by completing LawCPD&rsquo;s online CPD courses. </strong></p>
+              <p>All lawyers who hold a current Tasmanian practicing certificate must complete mandatory continuing professional development (<strong>CPD</strong>) each year.</p>
+              <p>Tasmanian lawyers must complete a minimum of 10 CPD units each year (1 April &ndash; 31 March) and must complete at least one unit from each of the following four mandatory competency areas:</p>
+              <ul>
+              	<li>Practical Legal Ethics;</li>
+              	<li>Practice Management and Business Skills;</li>
+              	<li>Professional Skills; and</li>
+              	<li>Substantive Law.</li>
+              </ul>
+              <p>Under the Law Society of Tasmania&rsquo;s CPD Scheme (Practice Guideline No. 4), lawyers can earn 1 CPD unit per hour and up to 5 CPD units each year by completing LawCPD&rsquo;s online legal CPD courses.</p>
+              <p><a href="http://lawcpd.com.au/law-cpd-points/tas-law-society-cpd" style="line-height: 1.6;">Click here to read more detailed information about the CPD requirements for Tas practitioners.</a></p>
+            </div>
+            <div class="content" id="vic-legal-cpd-rules">
+              <h3>Victoria Legal CPD Rules</h3>
+              <p><strong>Victorian lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online CPD courses.</strong></p>
+              <p>All Victorian lawyers must complete mandatory continuing professional development (<strong>CPD</strong>) each year to maintain their practising certificate.</p>
+              <p>Victorian lawyers must complete a minimum of 10 CPD points each CPD year (1 April &ndash; 31 March) and must earn a minimum of one point in each of the following four mandatory CPD areas:</p>
+              <ul>
+              	<li>Ethics and Professional Responsibility;</li>
+              	<li>Practice Management and Business Skills;</li>
+              	<li>Professional Skills; and</li>
+              	<li>Substantive Law.</li>
+              </ul>
+              <p>Under the Law Institute of Victoria&rsquo;s CPD scheme, lawyers can earn 1 legal CPD point per hour and all 10 legal CPD points each year by completing LawCPD&rsquo;s online CPD courses.</p>
+              <p><a href="/law-cpd-points/law-institute-vic-rules">Click here to read more detailed information about the CPD requirements for Victorian practitioners</a>.</p>
+            </div>
+            <div class="content" id="wa-legal-cpd-rules">
+              <h3>Western Australia Legal CPD Rules</h3>
+              <p><strong>WA lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online CPD courses. </strong></p>
+              <p><strong>LawCPD is an approved QA provider of CPD for the legal profession in Western Australia. LawCPD&rsquo;s online CPD courses are classified as an interactive electronic activity under the CPD rules.</strong></p>
+              <p>All Western Australian lawyers must complete mandatory continuing professional development (<strong>CPD</strong>) each year to maintain their practising certificate.</p>
+              <p>Under the new CPD rules which came into effect on 1 April 2015, WA lawyers must completed a minimum of 10 CPD points each year (1 April to 31 March), including a minimum of one CPD point in each of the mandatory competency areas listed below:</p>
+              <ul>
+              	<li>Competency Area 1: Practice Management;</li>
+              	<li>Competency Area 2: Professional Skills;</li>
+              	<li>Competency Area 3: Ethics and Professional Responsibility; and</li>
+              	<li>Competency Area 4: Substantive Law.</li>
+              </ul>
+              <p>Under the amended <em>Legal Profession Rules 2009</em>, WA lawyers can earn 1 CPD point per hour and all 10 CPD points each year by completing LawCPD&rsquo;s online legal CPD courses. This is because LawCPD&rsquo;s online courses are classified as an <strong>interactive electronic activity</strong> under the new CPD rules.</p>
+              <p><a href="/law-cpd-points/law-society-wa-rules">Click here to read more detailed information about the CPD requirements for WA practitioners</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="section3b" class="row">
+        <div class="small-12 columns">
+          <ul class="small-block-grid-1 medium-block-grid-3">
+            <li>
+              <a href="http://help.lawcpd.com.au/solution/articles/1000064035-tracking-your-cpd-completion-using-mycpd-and-certificates" target="_blank">
+                <h3 class="law-icon law-icon-page medium">CPD Tracking &amp; Certificates</h3>
+                <p>Take control of your CPD - track your CPD points and download completion certificates from your MyCPD page.</p>
+              </a>
+            </li>
+            <li>
+              <a href="/content/about-myrewards" target="_blank">
+                <h3 class="law-icon law-icon-ring medium">MyRewards Program</h3>
+                <p>Every fifth CPD point is free for individual lawyers through our MyRewards program.</p>
+              </a>
+            </li>
+            <li>
+              <a href="/corporate" target="_blank">
+                <h3 class="law-icon law-icon-court medium">Firms &amp; Organisations</h3>
+                <p>Take advantage of our volume discounts and single billing for firms and organisations with our course packs.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="section4" class="simple">
+      <div class="row">
+        <div>
+          <h2>LawCPD has been providing premium legal CPD since 2008</h2>
+          <p><a href="/why-choose-lawcpd">Find out why lawyers around Australia complete their CPD with us</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="authors" class="background" data-desktop="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background2-large.jpg" data-mobile="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background2-small.jpg">
+      <div class="row">
+        <div class="small-12 columns">
+          <h2>We bring the leading experts in law directly to you</h2>
+          <ul class="small-block-grid-2 medium-block-grid-5">
+            <li>
+              <a href="/authors/hon-michael-kirby-ac-cmg">
+                <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/author1.jpg" width="200" height="260" alt="The Hon Michael Kirby AC CMG" />
+                <span>The Hon Michael Kirby </span><span>AC CMG</span>
+              </a>
+            </li>
+            <li>
+              <a href="/authors/dr-suzanne-mcnicol-qc">
+                <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/author2.jpg" width="200" height="260" alt="Dr. Suzanne McNicol" />
+                <span>Dr. Sue McNicol QC </span>
+              </a>
+            </li>
+            <li>
+              <a href="/authors/dr-james-odonovan">
+                <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/author3.jpg" width="200" height="260" alt="Dr. James O'Donovan" />
+                <span>Dr. James O'Donovan </span>
+              </a>
+            </li>
+            <li>
+              <a href="/authors/dr-michelle-sharpe">
+                <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/author4.jpg" width="200" height="260" alt="Dr. Michelle Sharpe" />
+                <span>Dr. Michelle Sharpe </span>
+              </a>
+            </li>
+            <li>
+              <a href="/authors/hon-james-spigelman-ac-qc">
+                <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/author5.jpg" width="200" height="260" alt="The Hon James Spigelman AC QC" />
+                <span>The Hon James Spigelman </span><span>AC QC</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="section5" class="before-ribbon">
+      <div class="row">
+        <div class="small-12 columns">
+          <!-- h2>Communications</h2 -->
+          <ul class="small-block-grid-1 medium-block-grid-2">
+            <li>
+              <a href="http://help.lawcpd.com.au" target="_blank">
+                <h3 class="law-icon law-icon-phone large">Need some assistance?</h3>
+                <p>Call us on <strong>1300 948 950</strong> to speak with our friendly Australian support team about your CPD needs</p>
+              </a>
+            </li>
+            <li>
+              <a href="/blog">
+                <h3 class="law-icon law-icon-page large">With all due respect...</h3>
+                <p>Visit our blog and discover the latest legal industry insights</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ribbon top"><div><div></div><div></div><div></div><div></div><div></div></div></div>
+
+    <div id="newsletter" class="background after-ribbon" data-desktop="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background3-large.jpg" data-mobile="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background3-small.jpg">
+      <div class="row">
+        <div class="small-12 columns">
+          <h2>Sign up for our Newsletter</h2>
+          <p>Stay up to date with the latest courses, promotions and legal profession news</p>
+          <form action="/mailchimp/subscribe" method="post">
+            <div class="row collapse">
+              <div class="small-8 medium-9 columns">
+                <input type="text" placeholder="Enter your email here" name="email" />
+              </div>
+              <div class="small-4 medium-3 columns">
+                <input type="submit" class="button postfix" value="Subscribe" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="testimonials" class="arrow">
+      <div class="row">
+        <div class="small-12 columns">
+          <h2>What lawyers say about LawCPD</h2>
+          <ul class="small-block-grid-1 medium-block-grid-2">
+            <li>
+              <blockquote cite="Michelle Cox, Cox Legal, Mandurah WA">
+                <p>"Dealing with Difficult People was one of my favourite courses. Will look to take again in 12 months or so to see how my new strategies are working and my answers change..."</p>
+                <cite>Michelle Cox <address>Cox Legal, Mandurah WA</address></cite>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote cite="John Burke, The Business Physician, North Parramatta NSW">
+                <p>"The review questions at the end of each section and overall test at the end of the course, meant that you felt that you have actually completed the course and had actually learned something."</p>
+                <cite>John Burke <address>The Business Physician, North Parramatta NSW</address></cite>
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="section6" class="simple background" data-desktop="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background4-large.jpg" data-mobile="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background4-small.jpg">
+      <div class="row">
+        <div>
+          <a href="/online-courses" class="button">See our Online CPD Courses</a>
+        </div>
+      </div>
+    </div></div>
+  
+    
+</article>
+  
+  
+  
+  <!--.l-footer-->
+  <footer role="contentinfo">
+    <div class="row">
+      <div class="small-12 medium-8 medium-push-4 columns">
+        <ul class="menu"><li class="first leaf"><a href="/" title="" class="active">Home</a></li>
+<li class="leaf"><a href="/online-courses" title="">Online Courses</a></li>
+<li class="leaf"><a href="/how-it-works-premium-online-legal-cpd-seminars" title="100% online, on-demand legal CPD">How it works</a></li>
+<li class="leaf"><a href="/blog" title="With All Due Respect...">Blog</a></li>
+<li class="leaf"><a href="http://help.lawcpd.com.au/support/solutions/articles/1000064044-privacy" title="">Privacy Notice</a></li>
+<li class="leaf"><a href="http://help.lawcpd.com.au/" title="Answers to common questions">Help</a></li>
+<li class="last leaf"><a href="http://help.lawcpd.com.au/support/tickets/new" title="">Contact</a></li>
+</ul>        <em>&copy; 2018 All Rights Reserved</em>
+      </div>
+      <div class="small-12 medium-4 medium-pull-8 columns">
+        <a href="http://coursegenius.com">
+          <img src="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/image/logo/CourseGenius.png" alt="CourseGenius.com" />
+          Powered by <span>coursegenius.com</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!--/.footer-->
+
+  </div>
+<!--/.page -->
+  <!--[if lt IE 9]><div id="ie6nomore" class="clear-block"><div id="ie6nomore-wrapper">  <div id="ie6nomore-warning"><img src="/sites/all/modules/ie6nomore/images/ie6nomore-warning.jpg" alt="Warning!" /></div>  <div id="ie6nomore-message">    <div id="ie6nomore-title">You are using an outdated browser</div>    <div id="ie6nomore-description">For a better experience using this site, please upgrade to a modern web browser.</div></div><div class="ie6nomore-browser-wrapper"><a href="http://www.google.com/chrome" title="Get Chrome 19"><img class="ie6nomore-browser-image" src="/sites/all/modules/ie6nomore/images/ie6nomore-chrome-13.png" alt="Chrome icon"/></a></div><div class="ie6nomore-browser-wrapper"><a href="http://www.firefox.com" title="Get Firefox 13"><img class="ie6nomore-browser-image" src="/sites/all/modules/ie6nomore/images/ie6nomore-firefox.png" alt="Firefox icon"/></a></div><div class="ie6nomore-browser-wrapper"><a href="http://windows.microsoft.com/en-us/internet-explorer/products/ie/home" title="Get Internet Explorer 9"><img class="ie6nomore-browser-image" src="/sites/all/modules/ie6nomore/images/ie6nomore-ie.png" alt="Internet Explorer icon"/></a></div><div class="ie6nomore-browser-wrapper"><a href="http://www.opera.com/" title="Get Opera 12"><img class="ie6nomore-browser-image" src="/sites/all/modules/ie6nomore/images/ie6nomore-opera-11.50.png" alt="Opera icon"/></a></div><div class="ie6nomore-browser-wrapper"><a href="http://www.apple.com/safari/download/" title="Get Safari 5"><img class="ie6nomore-browser-image" src="/sites/all/modules/ie6nomore/images/ie6nomore-safari.png" alt="Safari icon"/></a></div></div></div><![endif]-->    <script>
+    (function ($, Drupal, window, document, undefined) {
+      $(document).foundation();
+    })(jQuery, Drupal, this, this.document);
+  </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f1051a0920","applicationID":"1982708","transactionName":"blJaYUAAXBFXVExcWlcYeVZGCF0MGVlXUVBmR1lSVz5EC1NA","queueTime":0,"applicationTime":1208,"atts":"QhVZFwgaTx8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

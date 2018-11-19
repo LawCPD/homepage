@@ -36,7 +36,17 @@
   <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script>jQuery(function() { jQuery(".loggedOut").removeClass("hidden"); });</script>
+  <script>
+    jQuery(function() {
+      var status = ".loggedOut";
+      try {
+        if (localStorage.getItem('mage-cache-storage').customer.fullname) {
+          status = ".loggedIn";
+        }
+      } catch(e) { /* Intentionally left blank. */ }
+      jQuery(status).removeClass("hidden");
+    });
+  </script>
 </head>
 <body class="html front not-logged-in no-sidebars page-node page-node- page-node-76 node-type-page lang-en" >
   <div class="skip-link">

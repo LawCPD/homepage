@@ -40,7 +40,7 @@
     jQuery(function() {
       var status = ".loggedOut";
       try {
-        if (localStorage.getItem('mage-cache-storage').customer.fullname) {
+        if (JSON.parse(localStorage.getItem('mage-cache-storage')).customer.fullname) {
           status = ".loggedIn";
         }
       } catch(e) { /* Intentionally left blank. */ }

@@ -33,11 +33,15 @@
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j6.js"></script>
   <script>
     jQuery(function() {
+      var selector = 'a[href="https://courses.lawcpd.com.au/mycpd"]';
       try {
         if (JSON.parse(localStorage.getItem('mage-cache-storage')).customer.fullname) {
-          jQuery('a[href="https://courses.lawcpd.com.au/mycpd"]').text("Go to MyCPD");
+          jQuery(selector).text("Go to MyCPD");
         }
       } catch(e) { /* Intentionally left blank. */ }
+      if (location.hostname !== "lawcpd.com.au") {
+        jQuery(selector).attr("href", "https://courses.lawcpd.com/mycpd");
+      }
     });
   </script>
 </head>

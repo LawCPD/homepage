@@ -1,7 +1,7 @@
-diff --git a/pub/homepage.html b/pub/homepage.html
+diff --git a/homepage.html b/homepage.html
 index 73e3c2a..9c56985 100644
---- a/pub/homepage.html
-+++ b/pub/homepage.html
+--- a/homepage.html
++++ b/homepage.html
 @@ -24,7 +24,7 @@
    <link rel="stylesheet" href="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/c3.css" />
    <link rel="stylesheet" href="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/c4.css" />

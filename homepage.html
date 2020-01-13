@@ -37,7 +37,7 @@
     jQuery(function() {
       var selector = 'a[href="https://courses.lawcpd.com.au/mycpd"]';
       try {
-        if (JSON.parse(localStorage.getItem('mage-cache-storage')).customer.fullname) {
+        if (jQuery.cookie('Drupal.toolbar.collapsed') || JSON.parse(localStorage.getItem('mage-cache-storage')).customer.fullname) {
           jQuery(selector).text("Go to MyCPD");
         }
       } catch(e) { /* Intentionally left blank. */ }

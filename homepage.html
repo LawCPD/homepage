@@ -68,6 +68,9 @@
     body.front #content p a {
       color: #F37021;
     }
+    body.front #newsletter p:first-of-type:before, body.front #newsletter p:last-of-type:after {
+      display: none;
+    }
     @media only screen and (min-width: 48em) {
       body.front #section1 h1 {
         margin-top: 3.6rem;
@@ -392,18 +395,8 @@
     <div id="newsletter" class="background after-ribbon" data-desktop="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background3-large.jpg" data-mobile="https://s3-ap-southeast-2.amazonaws.com/clp-s3-sydney/clp/lawcpd/home/background3-small.jpg">
       <div class="row">
         <div class="small-12 columns">
-          <h2>Sign up for our Newsletter</h2>
-          <p>Stay up to date with the latest courses, promotions and legal profession news</p>
-          <form action="/mailchimp/subscribe" method="post">
-            <div class="row collapse">
-              <div class="small-8 medium-9 columns">
-                <input type="text" placeholder="Enter your email here" name="email" />
-              </div>
-              <div class="small-4 medium-3 columns">
-                <input type="submit" class="button postfix" value="Subscribe" />
-              </div>
-            </div>
-          </form>
+          <h2>New to LawCPD? Create a Free Account Today</h2>
+          <p><a href="/customer/account/create" class="button small">Create Your Free Account</a></p>
         </div>
       </div>
     </div>

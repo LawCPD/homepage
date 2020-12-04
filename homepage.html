@@ -31,8 +31,6 @@
     var featureFlags = { "use_learner_dashboard": false };
     var urlFeatureFlags = 'https://clp-' + (location.hostname === "lawcpd.com.au" ? 's3' : 'dev') + '-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/featureFlags.json';
     var jqxhr = jQuery.get(urlFeatureFlags, function (data) { featureFlags = data; });
-    jqxhr.done(function() { console.log('success!'); }); // todo: remove.
-    jqxhr.fail(function() { console.log('error!'); }); // todo: remove.
   </script>
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j2.js"></script>
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j3.js"></script>
@@ -64,7 +62,6 @@
           jQuery(anchors(prodReferrer)).attr("href", referrers);
         });
       }
-      jqxhr.always(function() { console.log(featureFlags); }); // todo: remove.
     });
   </script>
   <style>

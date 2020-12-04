@@ -28,7 +28,7 @@
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j1.js"></script>
   <script>jQuery.migrateMute=true;jQuery.migrateTrace=false;</script>
   <script type="text/javascript">
-    var featureFlags = { "use_learner_dashboard": true };
+    var featureFlags = { "use_learner_dashboard": false };
     var urlFeatureFlags = 'https://clp-' + (location.hostname === "lawcpd.com.au" ? 's3' : 'dev') + '-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/featureFlags.json';
     var jqxhr = jQuery.get(urlFeatureFlags, function (data) { featureFlags = data; });
     jqxhr.done(function() { console.log('success!'); }); // todo: remove.

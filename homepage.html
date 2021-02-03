@@ -64,8 +64,8 @@
     var jqxhr = jQuery.get(urlFeatureFlags, function (data) {
       Object.assign(featureFlags, data);
       var use_learner_dashboard = jQuery.cookie('ff_use_learner_dashboard');
-      if (use_learner_dashboard !== undefined && !featureFlags.force_use_learner_dashboard) {
-        featureFlags.use_learner_dashboard = use_learner_dashboard;
+      if (use_learner_dashboard !== null && !featureFlags.force_use_learner_dashboard) {
+        featureFlags.use_learner_dashboard = use_learner_dashboard === '1' ? true : false;
       }
     });
   </script>

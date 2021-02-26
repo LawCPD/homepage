@@ -27,48 +27,6 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.type='text/javascript';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+(location.hostname==='lawcpd.com.au'?'':'&gtm_auth=iZ_TfRqAe_HoRPllQqn_3A&gtm_preview=env-22&gtm_cookies_win=x');j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WPNQTP');</script>
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j1.js"></script>
   <script>jQuery.migrateMute=true;jQuery.migrateTrace=false;</script>
-  <script type="text/javascript">
-    // Polyfill from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-    // Object.assign not available in Internet Explorer.
-    if (typeof Object.assign !== 'function') {
-      // Must be writable: true, enumerable: false, configurable: true
-      Object.defineProperty(Object, "assign", {
-        value: function assign(target, varArgs) { // .length of function is 2
-          'use strict';
-          if (target === null || target === undefined) {
-            throw new TypeError('Cannot convert undefined or null to object');
-          }
-
-          var to = Object(target);
-
-          for (var index = 1; index < arguments.length; index++) {
-            var nextSource = arguments[index];
-
-            if (nextSource !== null && nextSource !== undefined) {
-              for (var nextKey in nextSource) {
-                // Avoid bugs when hasOwnProperty is shadowed
-                if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-                  to[nextKey] = nextSource[nextKey];
-                }
-              }
-            }
-          }
-          return to;
-        },
-        writable: true,
-        configurable: true
-      });
-    }
-    var featureFlags = { 'force_use_learner_dashboard': false, 'use_learner_dashboard': false };
-    var urlFeatureFlags = 'https://clp-' + (location.hostname === 'lawcpd.com.au' ? 's3' : 'dev') + '-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/featureFlags.json';
-    var jqxhr = jQuery.get(urlFeatureFlags, function (data) {
-      Object.assign(featureFlags, data);
-      var use_learner_dashboard = jQuery.cookie('ff_use_learner_dashboard');
-      if (use_learner_dashboard !== null && !featureFlags.force_use_learner_dashboard) {
-        featureFlags.use_learner_dashboard = use_learner_dashboard === '1' ? true : false;
-      }
-    });
-  </script>
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j2.js"></script>
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j3.js"></script>
   <script src="https://clp-s3-sydney.s3-ap-southeast-2.amazonaws.com/clp/lawcpd/home/j4.js"></script>
@@ -77,27 +35,19 @@
   <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"clpt_lawcpd","theme_token":"U6qctvZlrKgF41guHNTQNNg9SVZVmHKXIuRScIsQDrI","jquery_version":"1.11","js":{"0":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.11\/jquery.min.js":1,"1":1,"sites\/all\/modules\/jquery_update\/replace\/jquery-migrate\/1\/jquery-migrate.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery.form\/4\/jquery.form.min.js":1,"sites\/all\/modules\/select2\/js\/Drupal.select2.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/ubercart\/uc_file\/uc_file.js":1,"sites\/all\/modules\/clp\/clp_helper\/ClpJavascript.js":1,"sites\/all\/modules\/clp\/clp_helper\/ClpDrupal.js":1,"sites\/all\/modules\/ie6nomore\/ie6nomore.js":1,"sites\/all\/modules\/clp\/module_admin\/module_admin.js":1,"sites\/all\/modules\/clp\/pdo_config\/pdo_config.js":1,"sites\/all\/modules\/uc_pma\/uc_pma.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/libraries\/select2\/select2.min.js":1,"sites\/all\/modules\/datalayer\/datalayer.js":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/js\/vendor\/modernizr.js":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/js\/foundation.min.js":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/js\/foundation.reveal.js":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/js\/vendor\/jquery.anystretch.min.js":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/js\/clpt_lawcpd.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"sites\/all\/modules\/ubercart\/uc_file\/uc_file.css":1,"sites\/all\/modules\/ubercart\/uc_order\/uc_order.css":1,"sites\/all\/modules\/ubercart\/uc_product\/uc_product.css":1,"sites\/all\/modules\/ubercart\/uc_store\/uc_store.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ie6nomore\/ie6nomore.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/clp\/custom_blocks\/custom_blocks.css":1,"sites\/all\/libraries\/select2\/select2.css":1,"sites\/all\/modules\/select2\/css\/select2_integration.css":1,"sites\/all\/themes\/zurb_foundation\/css\/normalize.css":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/css\/foundation.min.css":1,"sites\/courses.lawcpd.com.au\/themes\/clpt_lawcpd\/css\/clpt_lawcpd.css":1}},"clp_aws":{"ckfinder":{"config":{"removePlugins":"basket","connectorPath":"\/sites\/all\/modules\/ckeditor\/ckfinder\/core\/connector\/s3\/connector.php"}}},"urlIsAjaxTrusted":{"\/cart":true,"\/views\/ajax":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:849062071ed12c41d1e1a523753fdcd1":{"view_name":"available_modules","view_display_id":"block_1","view_args":"","view_path":"node\/76","view_base_path":"[pdonline:products-path]","view_dom_id":"849062071ed12c41d1e1a523753fdcd1","pager_element":0}}},"select_2":{"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"0"},"process_all_selects_on_page":true,"no_version_check":false,"elements":[],"settings_updated":true},"dataLayer":{"languages":{"en":{"language":"en","name":"English","native":"English","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"","weight":"0","javascript":""}}}});</script>
   <script>
     jQuery(function() {
-      var mycpd = jQuery('a[href="https://courses.lawcpd.com.au/mycpd"]');
+      var mycpd = jQuery('a[href="https://mycpd.lawcpd.com.au/start"]');
       try {
         if (jQuery.cookie('Drupal.toolbar.collapsed') || JSON.parse(localStorage.getItem('mage-cache-storage')).customer.fullname) {
           mycpd.text("Go to MyCPD");
         }
       } catch(e) { /* Intentionally left blank. */ }
-      if (location.hostname === "lawcpd.com.au") {
-        jqxhr.always(function() {
-          if (featureFlags.use_learner_dashboard) {
-            mycpd.attr("href", mycpd.attr("href").replace('courses.lawcpd.com.au/mycpd', 'mycpd.lawcpd.com.au'));
-          }
-        });
-      } else {
+      if (location.hostname !== "lawcpd.com.au") {
+        mycpd.attr('href', 'https://staging.aws-lawcpd.org/start');
         var prodReferrer = "aHR0cHM6Ly9sYXdjcGQuY29tLmF1L2xlZ2FsLWNwZA";
         var referrer = btoa(location.origin + "/legal-cpd").replace(/=+$/, "");
         function anchors(href) { return 'a[href*="' + href + '"]'; };
         function referrers(index, currentvalue) { return currentvalue.replace(prodReferrer, referrer); };
-        jqxhr.always(function() {
-          mycpd.attr("href", mycpd.attr("href").replace('courses.lawcpd.com.au/mycpd', featureFlags.use_learner_dashboard ? 'staging.aws-lawcpd.org' : 'courses.lawcpd.com/mycpd'));
-          jQuery(anchors(prodReferrer)).attr("href", referrers);
-        });
+        jQuery(anchors(prodReferrer)).attr("href", referrers);
       }
     });
   </script>
@@ -185,7 +135,7 @@
           <p>CPD that suits your busy schedule</p>
           <ul>
             <li><a href="/legal-cpd" class="button large"><span>See our Online </span><span>CPD Courses</span></a></li>
-            <li><a href="https://courses.lawcpd.com.au/mycpd" class="button small">Login to MyCPD</a></li>
+            <li><a href="https://mycpd.lawcpd.com.au/start" class="button small">Login to MyCPD</a></li>
           </ul>
         </div>
       </div>

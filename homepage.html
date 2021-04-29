@@ -42,7 +42,7 @@
         }
       } catch(e) { /* Intentionally left blank. */ }
       if (location.hostname !== "lawcpd.com.au") {
-        mycpd.attr('href', 'https://staging.aws-lawcpd.org/start');
+        mycpd.attr('href', 'https://mycpd.staging-lawcpd.org/start');
         var prodReferrer = "aHR0cHM6Ly9sYXdjcGQuY29tLmF1L2xlZ2FsLWNwZA";
         var referrer = btoa(location.origin + "/legal-cpd").replace(/=+$/, "");
         function anchors(href) { return 'a[href*="' + href + '"]'; };
